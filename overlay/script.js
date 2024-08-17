@@ -14,12 +14,33 @@ class FinancialData{
     }
 }
 
-
 var Financials = class {
     parse(){
         
     }
 }()
+
+
+
+var Footer = class {
+    constructor(){
+        
+    }
+    showNotProfession( profession ){
+        HTML_footerMessage.innerText = `We are not licensed ${profession}s.`
+    }
+    //tangents
+}()
+
+var Stamp = class {
+    constructor(){
+        
+    }
+    showNotProfession( profession ){
+
+    }
+}()
+
 
 
 
