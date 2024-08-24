@@ -5,7 +5,6 @@ import (
 	"html/template"
 	"log"
 	"net/http"
-    "main/player"
     "fmt"
     "strings"
 	"github.com/gorilla/websocket"
@@ -33,8 +32,6 @@ func echo(w http.ResponseWriter, r *http.Request) {
 		switch string(message) {
 		case "exit":
 			return
-        case "play":
-            player.Useit()
 		}
 		if err != nil {
 			log.Println("write:", err)
