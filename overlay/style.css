@@ -6,34 +6,3 @@ body{
     font-family:arial;
 }
 
-#HTML_footer{
-    font-weight:bold;
-    text-transform:uppercase;
-}
-#HTML_footerMessage{
-    font-size:8vh;
-    position:fixed;
-    background:linear-gradient(#AAA,white 20%);
-    border:2px black solid;
-    width:90vw;
-    height:12vh;
-    line-height:12vh;
-    padding-left:4vh;
-    left:5vw;
-    bottom:5vh;
-    border-radius:1vw 0.25vw 0.25vw 0.25vw;
-}
-#HTML_footerTitle{
-    background:linear-gradient(#440000 ,rgb(152, 0, 0) 20%);
-    border-radius:1vw 0.25vw 0.25vw 0.25vw;
-    position:fixed;
-    font-size:4vh;
-    width:20vw;
-    height:12vh;
-    line-height:7vh;
-    bottom:12vh;
-    left:4vw;
-    color:white;
-    padding-left:4vh;
-
-}

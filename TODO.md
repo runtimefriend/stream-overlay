@@ -1,6 +1,9 @@
 confetti 1st chatter video overlay
 
 
+Couldn't find something useful to use or extend.
+
+
 WHAT WE NEED:
   ability for every streamer to control
   reaction videos/audio
@@ -12,7 +15,7 @@ WHAT WE NEED:
 
 
 LEFT OFF:
-  adding server code (TODO: fix server code), starting dashboard work for controlling overlay
+  starting dashboard work for controlling overlay
 
   overlay html in progess, needs styling, and more commands
 

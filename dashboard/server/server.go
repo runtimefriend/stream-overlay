@@ -29,7 +29,12 @@ func echo(w http.ResponseWriter, r *http.Request) {
 		}
 		log.Printf("recv: %s", message)
 		err = c.WriteMessage(mt, message)
-		switch string(message) {
+        // | delimited message
+        args := strings.Split(string(message), "|")
+        command := args[0]
+        log.Println("args:", command)
+		switch string(command) {
+        case "chyron":
 		case "exit":
 			return
 		}
@@ -47,7 +52,9 @@ func home(w http.ResponseWriter, r *http.Request) {
 func checkOrigin(request *http.Request) bool {
     origin := request.Header.Get( "Origin" )
     fmt.Println( origin )
-	return origin == "null" || strings.HasPrefix( origin , "http://localhost" )
+	return origin == "null" ||
+      strings.HasPrefix( origin , "http://localhost" ) ||
+      strings.HasPrefix( origin , "http://127.0.0.1" )
 }
 
 func Start() {

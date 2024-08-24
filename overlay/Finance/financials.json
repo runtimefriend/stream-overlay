@@ -1,0 +1,15 @@
+[
+    { 
+        "item" : "Pop Webcam" ,
+        "value" : -30
+    } , { 
+        "item" : "Push Webcam" ,
+        "value" : -30
+    } , { 
+        "item" : "Push Webcam Neck Mount" ,
+        "value" : -10
+    } , { 
+        "item" : "Pop Webcam Neck Mount" ,
+        "value" : -10
+    }
+]
