@@ -1,8 +1,9 @@
-.chyron{
+<style>
+#chyron_widget{
     font-weight:bold;
     text-transform:uppercase;
 }
-.chyron > div:first-child{
+#chyron_widget > div:first-child{
     font-size:8vh;
     position:fixed;
     background:linear-gradient(#AAA,white 20%);
@@ -15,7 +16,7 @@
     bottom:5vh;
     border-radius:1vw 0.25vw 0.25vw 0.25vw;
 }
-.chyron > div:second-child{
+#chyron_widget > div:second-child{
     background:linear-gradient(#440000 ,rgb(152, 0, 0) 20%);
     border-radius:1vw 0.25vw 0.25vw 0.25vw;
     position:fixed;
@@ -29,3 +30,19 @@
     padding-left:4vh;
 
 }
+#chyron_button{
+    color:red;
+}
+</style>
+
+
+<div id="chyron_widget" style="display:none">
+    <div id="chyron_title">Title</div><div id="chyron_profession">Profession</div>
+</div>
+
+<div id="chyron_dashboard" style="display:none">
+    <input id="chyron_title_input">
+    <input id="chyron_profession_input">
+    <div id="chyron_button">UPDATE</div>
+    <div id="chyron_test"></div>
+</div>

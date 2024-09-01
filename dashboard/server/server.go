@@ -14,8 +14,11 @@ var addr = flag.String("addr", "localhost:8080", "http service address")
 
 var upgrader = websocket.Upgrader{} // use default options
 
-func echo(w http.ResponseWriter, r *http.Request) {
+var clients = make( []*websocket.Conn , 0 )
+
+func home(w http.ResponseWriter, r *http.Request) {
 	c, err := upgrader.Upgrade(w, r, nil)
+    clients = append( clients , c )
 	if err != nil {
 		log.Print("upgrade:", err)
 		return
@@ -28,25 +31,11 @@ func echo(w http.ResponseWriter, r *http.Request) {
 			break
 		}
 		log.Printf("recv: %s", message)
-		err = c.WriteMessage(mt, message)
-        // | delimited message
-        args := strings.Split(string(message), "|")
-        command := args[0]
-        log.Println("args:", command)
-		switch string(command) {
-        case "chyron":
-		case "exit":
-			return
-		}
-		if err != nil {
-			log.Println("write:", err)
-			break
-		}
+        for _,client := range clients {
+            clientDereferenced := *client
+            clientDereferenced.WriteMessage(mt, message) // broadcast back out
+        }
 	}
-}
-
-func home(w http.ResponseWriter, r *http.Request) {
-	homeTemplate.Execute(w, "ws://"+r.Host+"/echo")
 }
 
 func checkOrigin(request *http.Request) bool {
@@ -61,7 +50,7 @@ func Start() {
 	upgrader.CheckOrigin = checkOrigin
 	flag.Parse()
 	log.SetFlags(0)
-	http.HandleFunc("/echo", echo)
+	// http.HandleFunc("/echo", echo)
 	http.HandleFunc("/", home)
 	log.Fatal(http.ListenAndServe(*addr, nil))
 }
