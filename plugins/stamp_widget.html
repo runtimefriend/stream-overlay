@@ -1,0 +1,41 @@
+<style>
+    #stamp_widget{
+        font-weight:bold;
+        text-transform:uppercase;
+        position:absolute;
+        left:50%;
+        top:50%;
+        transform:translate(-50%,-50%);
+        text-align:center;
+    }
+    #stamp_title {
+        transform: rotate(-12deg);
+        color: #bb2525;
+        font-size: 12em;
+        font-weight: 700;
+        border: 0.1em solid #bb2525;
+        display: inline-block;
+        padding: 0.25em 1em;
+        text-transform: uppercase;
+        border-radius: 0.25em;
+        font-family: 'Courier';
+        -webkit-mask-image: url('./grunge_background.png');
+        -webkit-mask-size: 944px 604px;
+        mix-blend-mode: multiply;
+    }
+    #stamp_button{
+        color:red;
+    }
+    </style>
+    
+    
+    <div id="stamp_widget" style="display:none">
+        <div id="stamp_title">Title</div>
+    </div>
+    
+    <div id="stamp_dashboard" style="display:none">
+        <h1>Stamp</h1>
+        <input id="stamp_title_input">
+        <button id="stamp_button">UPDATE</div>
+    </div>
+    

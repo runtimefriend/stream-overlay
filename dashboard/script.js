@@ -1,36 +1,29 @@
 // import { Chyron , ChyronDash } from '../overlay/Chyron/script.js'
 
-let commonProfessions = [
-    "Geneologist" ,
-    "Attorney" ,
-    "Medical Practitioner" ,
-    "Historian" ,
-]
+window.runtimefriends = {}
 
-let commonStamps = [
-    "Idiot" ,
-    "Racist" ,
-]
+
+
+
 
 window.ws = null
 
 let status = HTML_socket_status
 
-function populateCommonProfessions() {
+/*function populateCommonProfessions() {
     for ( let profession of commonProfessions ){
         let element = document.createElement( 'div' )
         element.innerText = profession
     }
-}
+}*/
 
-function main(){
+/*function main(){
     populateCommonProfessions()
-}
+}*/
 
 function connectWs() {
 	ws = new WebSocket("ws://localhost:8080/echo")
 	ws.onopen = function () {
-		ws.send("Hello World from client")
         status.innerText = 'connected'
 	}
 
@@ -45,7 +38,7 @@ function connectWs() {
 
 connectWs( )
 
-main()
+//main()
 
 function loadPlugin( name ){
 
@@ -70,3 +63,5 @@ function loadPlugin( name ){
 
 
 loadPlugin( "chyron" )
+loadPlugin( "financials" )
+loadPlugin( "stamp" )

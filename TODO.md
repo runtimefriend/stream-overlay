@@ -1,22 +1,39 @@
-confetti 1st chatter video overlay
-GET CHAT WORKING SO EVERYONE CAN SEE CHAT
+
 
 
 Couldn't find something useful to use or extend.
 
 
+(update titlescreen stuff)
 
-convert register system so that overlay registers it automatically on plugin integration. Set this.ID parameter and get the class somehow? JS src tag runs in its own scope? So potentially get a generic variable from that scope?
 
-Chyron CSS was transferred and CSS not working correctly now.
+
+LEFT OFF:
+  writing "metacompiler.py" script to compile all .meta files into a .json file
+  reactions.js/html are completely broken
+
 
 WHAT WE NEED:
-  ability for every streamer to control
+  confetti 1st chatter video overlay
+  add air horn for confetti pops
+  make confetti work on dashboard
+    send coordinates to overlay or something
+    does dashboard coords translate to overlay coords
+      get dashboard coordinates as a percentage
+  stamp widget colors (green red blue) dashboard buttons
+  GET CHAT WORKING SO EVERYONE CAN SEE CHAT
+    maybe integrate into dashboard
+  get financials "add" working, update json
   reaction videos/audio
   ability to integrate custom reaction search/display
-  custom triggerable HTML widgets
-  styling chyron overlay widget
-  get push setup with the server
+  add presets to stamp and chyron
+  animate stamp
+    ideas(big to small short animation on stamp like its going down, add dwoosh sound, animate -32 financials going down and fading and make it red)
+  animate chyron
+    wipe across screen
+  
+  allow setting vdo link and liveshare link in dashboard
+  set dashboard link which is php link to server to set
 
 
 

@@ -1,0 +1,12 @@
+[
+    { 
+        "action" : "user" ,
+        "value" : "runtimefriends@ubuntu"
+    } , {
+        "action": "type",
+        "value" : "apt install runtime_friends"
+    } , {
+        "action": "command",
+        "value" : "enter"
+    }
+]

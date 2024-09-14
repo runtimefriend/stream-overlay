@@ -1,17 +1,6 @@
-let commonProfessions = [
-    "Geneologist" ,
-    "Attorney" ,
-    "Medical Practitioner" ,
-    "Historian" ,
-]
 
-
-window.runtimefriends.chyron = new class {
+window.runtimefriends.reaction = new class {
     constructor( ){
-        this.DURATION = 10
-        this.timeout = null
-        this.hide()
-   
         chyron_button.addEventListener("click",this.send)
     }
     parse( message ){

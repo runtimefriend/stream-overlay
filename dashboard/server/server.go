@@ -18,11 +18,11 @@ var clients = make( []*websocket.Conn , 0 )
 
 func home(w http.ResponseWriter, r *http.Request) {
 	c, err := upgrader.Upgrade(w, r, nil)
-    clients = append( clients , c )
 	if err != nil {
 		log.Print("upgrade:", err)
 		return
 	}
+    clients = append( clients , c )
 	defer c.Close()
 	for {
 		mt, message, err := c.ReadMessage()

@@ -1,0 +1,79 @@
+<style>
+    #confetti_widget{
+        font-weight:bold;
+        text-transform:uppercase;
+        position:absolute;
+        left:50%;
+        top:50%;
+        transform:translate(-50%,-50%);
+    }
+    #confetti_title {
+        transform: rotate(-12deg);
+        color: #bb2525;
+        font-size: 12em;
+        font-weight: 700;
+        border: 0.1em solid #bb2525;
+        display: inline-block;
+        padding: 0.25em 1em;
+        text-transform: uppercase;
+        border-radius: 0.25em;
+        font-family: 'Courier';
+        -webkit-mask-image: url('./grunge_background.png');
+        -webkit-mask-size: 944px 604px;
+        mix-blend-mode: multiply;
+    }
+    #confetti_button{
+        color:red;
+    }
+
+    html,
+body {
+  margin: 0;
+  padding: 0;
+  width: 100wh;
+  height: 100vh;
+  background: black;
+  font-weight: 100;
+  font-family: sans-serif;
+}
+
+body {
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+}
+
+button {
+  position: relative;
+  bottom: 20%;
+  font-size: 24pt;
+  letter-spacing: 3px;
+  background: #9b1c2c;
+  border: none;
+  border-radius: 5px;
+  color: white;
+  cursor: pointer;
+  transition: all 0.4s;
+  padding: 10px 20px;
+}
+
+button:hover {
+  color: #041e42;
+}
+
+button:focus {
+  outline: none;
+}
+    </style>
+    
+    
+    <div id="confetti_widget" style="display:none">
+        <!-- <div id="confetti_title">Confetti</div>
+        <button>It's time for Confetti!</button> -->
+    </div>
+    
+    <div id="confetti_dashboard" style="display:none">
+        <h1>Confetti</h1>
+        <button id="confetti_button">Pick a location</div>
+    </div>
+    

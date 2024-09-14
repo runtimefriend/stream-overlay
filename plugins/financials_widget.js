@@ -1,11 +1,7 @@
 
-var Chyron = new class {
+window.runtimefriends.financials = new class {
     constructor( ){
-        this.DURATION = 10
-        try{
-            register( "chyron" , this )
-        }catch{}
-        chyron_button.addEventListener("click",this.send)
+        financials_button.addEventListener("click",this.send)
     }
     load(){
         fetch('financials.json')
@@ -13,21 +9,17 @@ var Chyron = new class {
         .then(jsonData => animateTerminal(jsonData))
     }
     parse( message ){
-        message = message.split("|")
-        if ( message.length == 2 ){
-            this.show(message[0],message[1])
+        try{
+            this.save(parseFloat(message))
+        } catch{
+            ws.send(`error|financials|Error parsing input.`)
         }
     }
-    show( title , message ){
-        this.element.display = "block"
-        this.element.innerText = message
-        setTimeout( this.hide , this.DURATION * 1000 )
-    }
-    hide(){
-        this.element.display = "none"
+    save(value){
+
     }
     send(){
-        ws.send(`chyron|${chyron_title_input.value}|${chyron_profession_input.value}`)
+        ws.send(`financials|${chyron_title_input.value}|${chyron_profession_input.value}`)
         //console.log('sending')
         //document.body.dispatchEvent(new Event('send', {detail: 'test'}))
         //chyron_input.value//send this to the overlay
