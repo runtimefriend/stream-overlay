@@ -67,6 +67,7 @@ function loadPlugin( name , asDashboard ){
 		}
 		
         script.src = '../plugins/' + name + '_widget.js'
+		script.type = 'module'
         document.body.appendChild(script)
 
 
@@ -79,5 +80,5 @@ function loadPlugin( name , asDashboard ){
 loadPlugin( "chyron" , false)
 loadPlugin( "financials" , false)
 loadPlugin( "stamp" , false)
-// loadPlugin( "confetti" , false)
+loadPlugin( "confetti" , false)
 

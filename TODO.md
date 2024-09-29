@@ -14,13 +14,10 @@ LEFT OFF:
 
 
 WHAT WE NEED:
-  confetti 1st chatter video overlay
-  add air horn for confetti pops
-  make confetti work on dashboard
-    send coordinates to overlay or something
-    does dashboard coords translate to overlay coords
-      get dashboard coordinates as a percentage
+  integrate chat into Dashboard
+  add pop for confetti pops
   stamp widget colors (green red blue) dashboard buttons
+  stamp, random rotations? like -30 to 30 degree rotation
   GET CHAT WORKING SO EVERYONE CAN SEE CHAT
     maybe integrate into dashboard
   get financials "add" working, update json

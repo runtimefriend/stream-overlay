@@ -56,6 +56,7 @@ function loadPlugin( name ){
         document.getElementById(name + "_dashboard").style.display="block"
         
         let script = document.createElement("script")
+        script.type = 'module'
         script.src = '../plugins/' + name + '_widget.js'
         document.body.appendChild(script)
     })
@@ -65,3 +66,4 @@ function loadPlugin( name ){
 loadPlugin( "chyron" )
 loadPlugin( "financials" )
 loadPlugin( "stamp" )
+loadPlugin( "confetti" )
