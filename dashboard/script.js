@@ -6,9 +6,9 @@ window.runtimefriends = {}
 
 
 
-window.ws = null
+//window.ws = null
 
-let status = HTML_socket_status
+//let status = HTML_socket_status
 
 /*function populateCommonProfessions() {
     for ( let profession of commonProfessions ){
@@ -21,8 +21,8 @@ let status = HTML_socket_status
     populateCommonProfessions()
 }*/
 
-function connectWs() {
-	ws = new WebSocket("ws://localhost:8080/echo")
+/*function connectWs() {
+	ws = new WebSocket("ws://194.5.156.211:8080/echo")
 	ws.onopen = function () {
         status.innerText = 'connected'
 	}
@@ -36,12 +36,24 @@ function connectWs() {
 	}
 }
 
-connectWs( )
+connectWs( )*/
 
 //main()
+function getAddressAndPassword(){
+
+}
+
+function connect(){
+    let [ address , password ] = getAddressAndPassword( )
+    //load php password and address from file
+    //GET on gethost.php address with password
+    //receive host offer from php
+    //generate answer from offer
+    //send answer and password to sendconnection.php
+}
+
 
 function loadPlugin( name ){
-
     fetch('../plugins/' + name + '_widget.html')
     .then(resp => resp.text())
     .then(htmlText => {
@@ -62,8 +74,39 @@ function loadPlugin( name ){
     })
 }
 
+function getFile( path ) {
+    var dataObject = document.createElement( 'object' )
+    dataObject.type = "text/plain"
+    dataObject.data = path
+    document.body.appendChild( dataObject )
+    console.log( dataObject )
+    return dataObject.innerHTML
+}
 
-loadPlugin( "chyron" )
-loadPlugin( "financials" )
-loadPlugin( "stamp" )
-loadPlugin( "confetti" )
+function test(){
+    var buk = document.createElement( 'object' )
+    buk.type = "text/plain"
+    buk.data = "go.sum"
+    document.body.appendChild(buk)
+}
+
+function test2(){
+    var buk = document.createElement( 'div' )
+    buk.innerText = getFile( "../plugins/chyron_widget.html" )
+    document.body.appendChild(buk)
+
+    console.log( buk )
+}
+
+test()
+
+
+
+/*var book = document.createElement( 'div' )
+book.innerHTML = buk.innerHTML
+document.body.appendChild( book )*/
+
+//loadPlugin( "chyron" )
+//loadPlugin( "financials" )
+//loadPlugin( "stamp" )
+//loadPlugin( "confetti" )

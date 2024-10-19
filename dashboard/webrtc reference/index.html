@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>webrtc without signaling server demo</title>
+<link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+</head>
+
+<body>
+
+<h1>webrtc without signaling server demo.</h1>
+
+<p>
+a stun server is still required for connections over the internet.
+</p>
+
+<p>
+<a href="offering.html">offer a connection to a peer</a>
+</p>
+
+<p>
+<a href="answering.html">answer a connection offer from a peer</a>
+</p>
+
+</body>
+<script src="aes.js">
+</script>
+<script>
+console.log( "okay" )
+var en = AES.encrypt("My secret message.", "3lk65hkjh3683974gg");
+console.log( en )
+var glob = AES.decrypt(en, "3lk65hkjh3683974gg");
+console.log( "yako" )
+console.log( glob )
+</script>
+
+</html>
